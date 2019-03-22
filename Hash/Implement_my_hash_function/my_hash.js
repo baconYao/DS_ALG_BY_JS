@@ -19,21 +19,38 @@ class HashTable {
     if(!this.data[address]) {
       this.data[address] = [];
     }
+    // If we find the key alreadt exists in buckets, then replace the value of this key
+    let currentBuckets = this.data[address];
+    for(let i = 0; i < currentBuckets.length; i++) {
+      if(currentBuckets[i][0] === key) {
+        currentBuckets[i][1] = value;
+        return;
+      }
+    }
     this.data[address].push([key, value]);
   }
 
   get(key) {
-    return this.data[this._hash(key)];
-  }
+    let address = this._hash(key);
+    if(this.data[address] === undefined) {
+      return undefined;
+    }
 
+    var bucket = this.data[address].filter((bucket) => {
+      return bucket[0] === key;
+    });
+
+    return bucket[0][1];      // bucket: [["aaa", 500]]
+  }
 }
 
 const myHashTable = new HashTable(50);
 
 myHashTable.set('grapes', 10000);
-// var res = myHashTable.get('grapes');
-// console.log(res);
+myHashTable.set('grapes', 500);
+var res = myHashTable.get('grapes');
+console.log(res);
 
 myHashTable.set('apples', 9);
-// var res = myHashTable.get('apples');
-// console.log(res);
+var res = myHashTable.get('apples');
+console.log(res);

@@ -14,8 +14,12 @@ class HashTable {
   }
 
   set(key, value) {
-    let i = this._hash(key);
-    this.data[i] = value;
+    let address = this._hash(key);
+    // this address dosen't have any bucket, so we need to initialize an array to it.
+    if(!this.data[address]) {
+      this.data[address] = [];
+    }
+    this.data[address].push([key, value]);
   }
 
   get(key) {
@@ -27,9 +31,9 @@ class HashTable {
 const myHashTable = new HashTable(50);
 
 myHashTable.set('grapes', 10000);
-var res = myHashTable.get('grapes');
-console.log(res);
+// var res = myHashTable.get('grapes');
+// console.log(res);
 
 myHashTable.set('apples', 9);
-var res = myHashTable.get('apples');
-console.log(res);
+// var res = myHashTable.get('apples');
+// console.log(res);

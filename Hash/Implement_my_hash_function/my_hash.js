@@ -42,6 +42,17 @@ class HashTable {
 
     return bucket[0][1];      // bucket: [["aaa", 500]]
   }
+
+  // retrieve all kes
+  keys() {
+    let allKeys = [];
+    for(let i = 0; i < this.data.length; i++) {
+      if(this.data[i]) {
+        allKeys.push(this.data[i][0][0]);     //push the key to the return array
+      }
+    }
+    return allKeys;
+  }
 }
 
 const myHashTable = new HashTable(50);
@@ -54,3 +65,10 @@ console.log(res);
 myHashTable.set('apples', 9);
 var res = myHashTable.get('apples');
 console.log(res);
+
+myHashTable.set('no ways', 888);
+myHashTable.set('judy', 666);
+
+
+var keys = myHashTable.keys();
+console.log(keys.sort());

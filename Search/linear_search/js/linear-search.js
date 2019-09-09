@@ -8,6 +8,14 @@
  */
 
 const linearSearch = (array, value) => {
+    /* Search function from start point to end.
+     * Args:
+     *      array {array}: data set
+     *      value {string}: a character to be searched
+     * Return:
+     *      if found: return the index of target element
+     *      else: return -1
+     */
     if (array == null || array.length < 1 || value == null) return -1;
     for (let i = 0; i < array.length; i++) {
         if (array[i] === value) return i; 

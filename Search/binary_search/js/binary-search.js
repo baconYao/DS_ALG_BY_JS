@@ -1,6 +1,6 @@
 'use strict';
 
-function binarySearch(sorted_array, value) {
+function myBinarySearch(sorted_array, value) {
     /* 
      * Args:
      *      sorted_array {array}: an array which was sorted
@@ -39,6 +39,26 @@ function binarySearch(sorted_array, value) {
         }
     }
 }
+
+// Optimize Version
+function binarySearch(arr, elem) {
+    var start = 0;
+    var end = arr.length - 1;
+    var middle = Math.floor((start + end) / 2);
+    while(arr[middle] !== elem && start <= end) {
+        if(elem < arr[middle]) end = middle - 1;
+        else start = middle + 1;
+        middle = Math.floor((start + end) / 2);
+    }
+    return arr[middle] === elem ? middle : -1;
+}
+
+console.log(myBinarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 23));   // -1
+console.log(myBinarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 11));   // 6
+console.log(myBinarySearch([1,3,5,7,9,11,13,15], 15));    // 7
+console.log(myBinarySearch([1,3,5,7,9,11,13,15], 1));     // 0
+console.log(myBinarySearch([1,3,5,7,9,11,13,15], 2));     // -1
+console.log(myBinarySearch([1,3,5,7,9,11,13,15], 20));    // -1
 
 console.log(binarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 23));   // -1
 console.log(binarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 11));   // 6

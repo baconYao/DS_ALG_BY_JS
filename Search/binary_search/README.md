@@ -16,3 +16,9 @@
     * If the value is too small, move the left pointer up (you can move left pointer to the position of middle)
     * If the value is too large, move the right pointer doen (you can move right pointer to the position of middle)
 * If you never find the value, retunr -1
+
+# time complexity
+
+* `Best`: O(1)
+* `Avg`: O(log n)
+* `Worst`: O(log n)

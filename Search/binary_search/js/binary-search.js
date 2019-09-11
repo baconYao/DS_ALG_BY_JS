@@ -40,8 +40,9 @@ function binarySearch(sorted_array, value) {
     }
 }
 
-console.log(binarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 23));
-console.log(binarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 11));
-console.log(binarySearch([1,3,5,7,9,11,13,15], 15));
-console.log(binarySearch([1,3,5,7,9,11,13,15], 1));
-console.log(binarySearch([1,3,5,7,9,11,13,15], 2));
+console.log(binarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 23));   // -1
+console.log(binarySearch([1,2,3,5,7,9,11,13,14,15,20,26,27,28,29,30,31,35,37,38,39,40], 11));   // 6
+console.log(binarySearch([1,3,5,7,9,11,13,15], 15));    // 7
+console.log(binarySearch([1,3,5,7,9,11,13,15], 1));     // 0
+console.log(binarySearch([1,3,5,7,9,11,13,15], 2));     // -1
+console.log(binarySearch([1,3,5,7,9,11,13,15], 20));    // -1

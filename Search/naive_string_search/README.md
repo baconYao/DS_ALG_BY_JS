@@ -1,6 +1,6 @@
 # Naive String Search
 
-* Naive string search help ypu to find out hom many count of your target string (substring) match the string.
+* Naive string search help ypu to find out how many count of your target string (substring) match the string.
 * For example:
     ```
     string: wowomgzomg

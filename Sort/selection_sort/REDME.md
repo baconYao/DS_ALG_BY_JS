@@ -11,3 +11,7 @@
 * Repeat this with the next element until the array is sorted.
 
 # time complexity
+
+O(n2)
+
+In potentially, 'Selection Sort' is better than 'Bubble Sort' since Bubble Sort has to swap frequently, however, Selection Sort is only swap once if needed in each iteration.

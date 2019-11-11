@@ -9,11 +9,9 @@ function mySelectionSort(unSortedArr) {
     */
     var al = unSortedArr.length;
     for(let i = 0; i < al - 1; i++) {
-        let sv_i = i;   // the index of the smallest value and the value is smaller than unSortedArr[i]
-        let sv = unSortedArr[i];
+        let sv_i = i;   // the index of the smallest value and the initial value is equal to i used to be basis
         for(let j = i + 1; j < al; j++) {
-            if(unSortedArr[j] < sv) {
-                sv = unSortedArr[j];
+            if(unSortedArr[j] < unSortedArr[sv_i]) {
                 sv_i = j;
             }   
         }

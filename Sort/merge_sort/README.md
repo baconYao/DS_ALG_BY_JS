@@ -22,7 +22,7 @@
 
 # How to implement
 
-### This is loop method
+### This is a method for merge two arrays
 
 * Create an empty array, take a look at the smallest values in each input array
 * While there are still values we haven't looked at...
@@ -37,3 +37,11 @@
 * Once the array has been merged back together, return the mergerd (and sorted) array
 
 # time complexity
+
+* `Best`: O(nlogn)
+* `Avg`: O(nlogn)
+* `Worst`: O(nlogn)
+
+# space complexity
+
+O(n)

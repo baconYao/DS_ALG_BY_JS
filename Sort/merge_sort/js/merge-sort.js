@@ -1,4 +1,4 @@
-function myMergeSort(arr1, arr2) {
+function mergeTwoArray(arr1, arr2) {
   /* 
   * Args:
   *      arr1 {array}: an array is disorder
@@ -32,5 +32,23 @@ function myMergeSort(arr1, arr2) {
   return mergedArray;
 }
 
-console.log(myMergeSort([1, 10, 50], [2, 14, 99, 100]));
-console.log(myMergeSort([], [2, 14, 99, 100]));
+function mergeSort(arr) {
+  /* 
+  * Using recursive method to implement sort
+  * 
+  * Args:
+  *      arr {array}: an array is disorder
+  * Return:
+  *      a sorted and ascending array
+  */
+
+  if(arr.length <= 1) return arr;
+  const mid = Math.floor(arr.length/2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+  return mergeTwoArray(left, right);
+}
+
+
+console.log(mergeSort([1, 10, 50, 2, 14, 99, 100]));
+console.log(mergeSort([2, 100, 99, 14, 87, 42, 32, 1]));
